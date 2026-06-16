@@ -18,7 +18,7 @@ export default function HomePage() {
         <div className="hero-main">
           <div>
             <div className="eyebrow">KD1313 Command Network</div>
-            <h1>Kingdom of Driftwood. <span>Not another sleepy kingdom page.</span></h1>
+            <h1>Kingdom of Driftwood. <span>Rise with the tide.</span></h1>
             <p className="lead">
               A public front door for recruits and allies, plus a growing members platform for
               notices, MGE tracking, KVK preparation, tools, roster visibility, and future Discord automation.
@@ -37,17 +37,15 @@ export default function HomePage() {
             <div className="signal"><b>Driftwood</b><span>Kingdom identity</span></div>
           </div>
         </div>
-        <aside className="hero-side">
+        <aside className="hero-side" aria-label="Kingdom 1313 cinematic artwork">
           <div className="command-card">
-            <img className="crest" src="/assets/images/kingdom-crest.svg" alt="KD1313 crest" />
-            <h3>Kingdom Status</h3>
-            <p className="muted">Public site is live. Members area is in preview until Supabase login and roles are connected.</p>
-          </div>
-          <div className="status-grid">
-            <div className="status"><strong>Public</strong><span>Recruitment and rules</span><small>Open</small></div>
-            <div className="status"><strong>Member</strong><span>Dashboard preview</span><small>Soft gated</small></div>
-            <div className="status"><strong>Roles</strong><span>R4/R5/Council later</span><small>Planned</small></div>
-            <div className="status"><strong>Bot</strong><span>Discord link later</span><small>Planned</small></div>
+            <span className="tag">Kingdom Status</span>
+            <h3>A public banner with a private hall behind it.</h3>
+            <p className="muted">Recruitment remains in Discord. The members area becomes the lounge, rulebook, event board, and future command toolkit.</p>
+            <div className="status-grid" style={{ marginTop: 18 }}>
+              <div className="status"><strong>Open</strong><span>Public reputation</span><small>Visitors</small></div>
+              <div className="status"><strong>Preview</strong><span>Members area</span><small>Login next</small></div>
+            </div>
           </div>
         </aside>
       </section>
