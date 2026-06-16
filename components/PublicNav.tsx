@@ -1,10 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function PublicNav() {
   return (
     <nav className="nav">
       <Link className="brand" href="/">
-        <span className="brand-mark">1313</span>
+        <Image className="brand-mark" src="/assets/images/kd1313-logo-nav.png" alt="KD1313 crest" width={46} height={46} />
         <span>
           <strong>KD1313</strong>
           <span>Kingdom of Driftwood</span>
