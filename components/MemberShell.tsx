@@ -2,13 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-  ["Command", "/members"],
-  ["Newsletter", "/members/newsletter"],
-  ["MGE Board", "/members/mge"],
-  ["KVK Room", "/members/kvk"],
+  ["Dashboard", "/members"],
+  ["Events", "/events"],
+  ["MGE", "/members/mge"],
+  ["KVK", "/members/kvk"],
   ["Tools", "/members/tools"],
-  ["Roster", "/members/roster"],
-  ["Council", "/members/council"]
+  ["Roster", "/members/roster"]
 ];
 
 export function MemberShell({ children }: { children: React.ReactNode }) {

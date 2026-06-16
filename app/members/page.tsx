@@ -2,10 +2,12 @@ import { MemberShell } from "@/components/MemberShell";
 import { notices } from "@/lib/data";
 
 const ops = [
-  ["Newsletter", "Weekly briefing draft", "/members/newsletter"],
-  ["MGE Board", "Manual rank tracking", "/members/mge"],
-  ["KVK Room", "Readiness checklist", "/members/kvk"],
-  ["Tools", "Timers and converters", "/members/tools"]
+  ["Announcements", "Kingdom notices and updates", "/members/newsletter"],
+  ["Events", "Ark, KVK, MGE, and reset planning", "/events"],
+  ["MGE", "Manual rank board", "/members/mge"],
+  ["KVK", "Prep checklist and war notes", "/members/kvk"],
+  ["Tools", "Timers and converters", "/members/tools"],
+  ["Roster", "Member and role visibility", "/members/roster"]
 ];
 
 export default function MembersPage() {
@@ -13,16 +15,16 @@ export default function MembersPage() {
     <MemberShell>
       <div className="dash-title">
         <div>
-          <div className="eyebrow">Member Command</div>
-          <h1>Kingdom operations at a glance.</h1>
+          <div className="eyebrow">KD1313 Portal</div>
+          <h1>Member dashboard.</h1>
         </div>
-        <span className="tag">Member Hall</span>
+        <span className="tag">Protected</span>
       </div>
       <div className="grid-4">
-        <div className="status"><strong>KVK</strong><span>Prep checklist online</span><small>Members</small></div>
-        <div className="status"><strong>MGE</strong><span>Ranks ready for data</span><small>Officers</small></div>
-        <div className="status"><strong>UTC</strong><span>Converter planned</span><small>Tools</small></div>
-        <div className="status"><strong>TiNY</strong><span>Roster forming</span><small>Alliance</small></div>
+        <div className="status"><strong>KVK</strong><span>Checklist online</span><small>Prep</small></div>
+        <div className="status"><strong>MGE</strong><span>Rank board ready</span><small>Tracking</small></div>
+        <div className="status"><strong>Events</strong><span>Calendar structure live</span><small>Planning</small></div>
+        <div className="status"><strong>TiNY</strong><span>Main alliance</span><small>KD1313</small></div>
       </div>
       <section style={{ padding: "24px 0 0" }}>
         <div className="module">

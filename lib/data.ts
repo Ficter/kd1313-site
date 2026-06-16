@@ -1,13 +1,13 @@
 export const alliances = [
-  { tag: "TiNY", name: "Tiddies N' Yams", role: "Primary kingdom alliance", focus: "The main banner for KD1313: war activity, kingdom culture, KVK presence, and leadership coordination." },
-  { tag: "Open", name: "Support Wing", role: "Expansion slot", focus: "A future home for reinforcements, event support, farms, and players growing into main-alliance standards." },
-  { tag: "Open", name: "Academy Wing", role: "Growth slot", focus: "A planned onboarding space for newer governors, returning players, farms, and structured daily development." }
+  { tag: "TiNY", name: "Tiddies N' Yams", role: "Primary kingdom alliance", focus: "Main alliance for KD1313 leadership, KVK activity, events, and kingdom coordination." },
+  { tag: "1313", name: "Support Wing", role: "Secondary structure", focus: "Space for farms, support accounts, growth players, and kingdom event coverage." },
+  { tag: "1313", name: "Academy Wing", role: "Growth structure", focus: "Future onboarding lane for newer governors and returning players." }
 ];
 
 export const notices = [
-  { title: "Weekly Driftwood Briefing", text: "A clean weekly note for council updates, kingdom priorities, member shoutouts, and upcoming events." },
-  { title: "KVK Preparation", text: "A shared readiness checklist for healing speedups, teleports, resources, march presets, and rally response." },
-  { title: "Discord Recruitment", text: "Migration candidates still apply in Discord, while the website shows them what KD1313 is becoming." }
+  { title: "Announcements", text: "Use this space for kingdom-wide updates that should not disappear in Discord chat." },
+  { title: "KVK Preparation", text: "Keep readiness notes, checklists, and rally instructions in one predictable place." },
+  { title: "Discord Recruitment", text: "Migration candidates apply through Discord. The website stays as the clean public front door." }
 ];
 
 export const mgeRows = [

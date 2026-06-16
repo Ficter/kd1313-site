@@ -4,10 +4,10 @@ import { PublicNav } from "@/components/PublicNav";
 import { alliances } from "@/lib/data";
 
 const modules = [
-  ["The Gate", "A polished public face for recruits, allies, rivals, and curious visitors.", "Open"],
-  ["The Hall", "A private members area for notices, rules, war prep, rankings, and kingdom tools.", "Members"],
-  ["The War Room", "KVK planning, MGE visibility, roster coordination, and officer updates.", "Council"],
-  ["The Tavern", "A lighter lounge for member highlights, weekly notes, and kingdom culture.", "Community"]
+  ["Announcements", "Kingdom updates and instructions in one place.", "Portal"],
+  ["Events", "Ark, KVK, MGE, and reset reminders.", "Portal"],
+  ["KVK Stats", "A home for KP, dead troops, prep, and performance tracking.", "Planned"],
+  ["Accounts", "Roster and governor ID management for officers.", "Planned"]
 ];
 
 export default function HomePage() {
@@ -18,16 +18,16 @@ export default function HomePage() {
         <div className="hero-main">
           <div>
             <div className="eyebrow">Kingdom 1313 | Kingdom of Driftwood</div>
-            <h1>Kingdom of Driftwood. <span>Rise with the tide.</span></h1>
+            <h1>KD1313 Kingdom Portal.</h1>
             <p className="lead">
-              A kingdom built for players who show up: sharp recruitment, visible standards,
-              stronger member coordination, and a community identity that feels worth fighting for.
+              A simple public front door for Kingdom 1313, with recruitment handled through Discord
+              and member tools kept behind the portal.
             </p>
             <div className="actions">
               <Link className="btn" href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || "https://discord.gg/"}>
-                Apply Through Discord
+                Join Recruitment Discord
               </Link>
-              <Link className="btn secondary" href="/login">Members Entrance</Link>
+              <Link className="btn secondary" href="/login">Member Login</Link>
             </div>
           </div>
           <div className="signal-strip">
@@ -39,12 +39,12 @@ export default function HomePage() {
         </div>
         <aside className="hero-side" aria-label="Kingdom 1313 cinematic artwork">
           <div className="command-card">
-            <span className="tag">Driftwood Doctrine</span>
-            <h3>Stand together, move clean, answer the call.</h3>
-            <p className="muted">Recruitment happens through Discord. The site gives KD1313 a public identity and gives members a central place for the things that should not get buried in chat.</p>
+            <span className="tag">Portal Status</span>
+            <h3>Public outside. Operational inside.</h3>
+            <p className="muted">Visitors get the essentials. Members log in for rankings, prep, tools, roster info, and future Discord-connected features.</p>
             <div className="status-grid" style={{ marginTop: 18 }}>
-              <div className="status"><strong>Recruit</strong><span>Apply in Discord</span><small>Visitors</small></div>
-              <div className="status"><strong>Gather</strong><span>Member hall</span><small>KD1313</small></div>
+              <div className="status"><strong>Open</strong><span>Recruitment Discord</span><small>Visitors</small></div>
+              <div className="status"><strong>Login</strong><span>Member portal</span><small>KD1313</small></div>
             </div>
           </div>
         </aside>
@@ -52,9 +52,9 @@ export default function HomePage() {
       <section>
         <div className="section-head">
           <div>
-            <div className="eyebrow">Kingdom Structure</div>
-            <h2>One public legend. One private hall.</h2>
-            <p className="lead">Visitors see what KD1313 stands for. Members get the operational layer: rankings, reminders, rules, prep lists, and the tools that make a kingdom easier to run.</p>
+            <div className="eyebrow">Portal</div>
+            <h2>Built for practical kingdom use.</h2>
+            <p className="lead">The site stays small: public identity, Discord recruitment, member login, and tools that help leadership run the kingdom.</p>
           </div>
         </div>
         <div className="module">
@@ -72,9 +72,9 @@ export default function HomePage() {
       <section>
         <div className="section-head">
           <div>
-            <div className="eyebrow">Alliance Banner</div>
-            <h2>TiNY carries the first banner.</h2>
-            <p className="lead">Tiddies N&apos; Yams brings the name, the noise, and the nerve. The kingdom site gives that energy a sharper home.</p>
+            <div className="eyebrow">Alliance</div>
+            <h2>Main alliance: TiNY.</h2>
+            <p className="lead">Tiddies N&apos; Yams is the current main alliance banner for Kingdom 1313.</p>
           </div>
           <Link className="btn secondary" href="/alliances">Directory</Link>
         </div>

@@ -13,9 +13,7 @@ export function PublicNav() {
       </Link>
       <div className="nav-links">
         <Link href="/">Home</Link>
-        <Link href="/alliances">Alliances</Link>
         <Link href="/rules">Rules</Link>
-        <Link href="/events">Events</Link>
         <Link href="/login">Members</Link>
       </div>
       <Link className="btn" href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || "https://discord.gg/"}>
