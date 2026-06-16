@@ -8,7 +8,7 @@ export default function AlliancesPage() {
       <PublicNav />
       <section className="page">
         <div className="eyebrow">Alliance Directory</div>
-        <h1>Public alliance map for the Kingdom of Driftwood.</h1>
+        <h1>Public alliance map.</h1>
         <p className="lead">Alliance names can be public, while sensitive war planning stays inside Discord and the members area.</p>
         <div className="grid-3">
           {alliances.map((alliance) => (

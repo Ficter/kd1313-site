@@ -18,7 +18,6 @@ export default function HomePage() {
         <div className="hero-main">
           <div>
             <div className="eyebrow">Kingdom 1313 | Kingdom of Driftwood</div>
-            <h1>Kingdom of Driftwood.</h1>
             <p className="lead">
               A simple public front door for Kingdom 1313, with recruitment handled through Discord
               and member tools kept behind the portal.
