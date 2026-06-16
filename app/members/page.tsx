@@ -4,6 +4,7 @@ import { notices } from "@/lib/data";
 const ops = [
   ["Announcements", "Kingdom notices and updates", "/members/newsletter"],
   ["Events", "Ark, KVK, MGE, and reset planning", "/events"],
+  ["Stats", "KP, DKP, dead, healed, and acclaim board", "/members/stats"],
   ["MGE", "Manual rank board", "/members/mge"],
   ["KVK", "Prep checklist and war notes", "/members/kvk"],
   ["Tools", "Timers and converters", "/members/tools"],
