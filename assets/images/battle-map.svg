@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Kingdom 1313 Strategy Map</title>
+  <desc id="desc">Original stylized strategy map with forts, roads, and territory lines.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#221217"/>
+      <stop offset=".5" stop-color="#151a22"/>
+      <stop offset="1" stop-color="#0b0c11"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".35" cy=".35" r=".7">
+      <stop offset="0" stop-color="#e1ad48" stop-opacity=".55"/>
+      <stop offset=".42" stop-color="#95384d" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#0b0c11" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <rect width="1400" height="900" fill="url(#glow)"/>
+  <path d="M70 602c168-94 276-44 407-122 140-83 215-254 400-247 159 6 246 137 452 62" fill="none" stroke="#d7a54a" stroke-opacity=".28" stroke-width="18"/>
+  <path d="M96 646c178-69 281-18 423-91 159-82 221-230 369-214 148 17 239 129 418 77" fill="none" stroke="#ffffff" stroke-opacity=".1" stroke-width="6"/>
+  <path d="M162 194 432 106l217 91 296-61 293 124-164 267 125 221-326 33-190-104-243 78-262-135 74-238-90-188Z" fill="#1d2227" stroke="#d6a64b" stroke-opacity=".42" stroke-width="5"/>
+  <path d="M432 106 440 755M649 197 683 677M945 136 873 781M252 382l822 145" fill="none" stroke="#d6a64b" stroke-opacity=".2" stroke-width="4"/>
+  <g fill="#d6a64b">
+    <path d="M416 285h62v80h-62z"/><path d="M405 283h84l-42-42z"/><path d="M422 254h50v31h-50z"/>
+    <path d="M792 422h62v80h-62z"/><path d="M781 420h84l-42-42z"/><path d="M798 391h50v31h-50z"/>
+    <path d="M1051 251h62v80h-62z"/><path d="M1040 249h84l-42-42z"/><path d="M1057 220h50v31h-50z"/>
+  </g>
+  <g fill="#8c2031" stroke="#ffd987" stroke-width="4">
+    <circle cx="447" cy="365" r="20"/>
+    <circle cx="823" cy="502" r="20"/>
+    <circle cx="1082" cy="331" r="20"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#f8e9be" font-weight="700">
+    <text x="390" y="419" font-size="34">WEST GATE</text>
+    <text x="755" y="556" font-size="34">TEMPLE ZONE</text>
+    <text x="1008" y="384" font-size="34">HIGH PASS</text>
+    <text x="86" y="816" font-size="42">KINGDOM 1313 WAR MAP</text>
+  </g>
+</svg>

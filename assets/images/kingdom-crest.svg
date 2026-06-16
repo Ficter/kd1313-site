@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Kingdom 1313 Crest</title>
+  <desc id="desc">Original gold and crimson crest for Kingdom 1313.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffe6a6"/>
+      <stop offset=".42" stop-color="#d8a23c"/>
+      <stop offset="1" stop-color="#7a4d12"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#711727"/>
+      <stop offset="1" stop-color="#2a0711"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#07030a" flood-opacity=".55"/>
+    </filter>
+  </defs>
+  <rect width="720" height="720" fill="#100912"/>
+  <circle cx="360" cy="360" r="298" fill="none" stroke="#3b2a1e" stroke-width="24"/>
+  <circle cx="360" cy="360" r="264" fill="#170b12" stroke="url(#gold)" stroke-width="10"/>
+  <path filter="url(#shadow)" d="M360 105 548 174v150c0 132-73 229-188 291-115-62-188-159-188-291V174l188-69Z" fill="url(#red)" stroke="url(#gold)" stroke-width="18"/>
+  <path d="M236 238h248l-31 66h-67v176h-72V304h-79l1-66Z" fill="url(#gold)"/>
+  <path d="M231 498h258v58H231v-58Z" fill="url(#gold)"/>
+  <path d="M268 188c40-30 72-45 92-45s52 15 92 45l-36 38c-24-17-43-26-56-26s-32 9-56 26l-36-38Z" fill="url(#gold)"/>
+  <text x="360" y="604" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#ffe6a6">1313</text>
+</svg>
