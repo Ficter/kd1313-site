@@ -16,13 +16,13 @@ export default function MembersPage() {
           <div className="eyebrow">Member Command</div>
           <h1>Kingdom operations at a glance.</h1>
         </div>
-        <span className="tag">Preview Mode</span>
+        <span className="tag">Member Hall</span>
       </div>
       <div className="grid-4">
         <div className="status"><strong>KVK</strong><span>Prep checklist online</span><small>Members</small></div>
         <div className="status"><strong>MGE</strong><span>Ranks ready for data</span><small>Officers</small></div>
         <div className="status"><strong>UTC</strong><span>Converter planned</span><small>Tools</small></div>
-        <div className="status"><strong>TiNY</strong><span>Roster placeholder</span><small>Alliance</small></div>
+        <div className="status"><strong>TiNY</strong><span>Roster forming</span><small>Alliance</small></div>
       </div>
       <section style={{ padding: "24px 0 0" }}>
         <div className="module">

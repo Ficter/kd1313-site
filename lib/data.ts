@@ -1,25 +1,25 @@
 export const alliances = [
-  { tag: "TiNY", name: "Tiddies N' Yams", role: "Primary kingdom alliance", focus: "War, KVK, kingdom leadership, and main activity." },
-  { tag: "TBD", name: "Second Alliance", role: "Support alliance", focus: "Reinforcement, growth, events, and kingdom backup." },
-  { tag: "TBD", name: "Academy", role: "Growth alliance", focus: "Newer players, farms, onboarding, and daily development." }
+  { tag: "TiNY", name: "Tiddies N' Yams", role: "Primary kingdom alliance", focus: "The main banner for KD1313: war activity, kingdom culture, KVK presence, and leadership coordination." },
+  { tag: "Open", name: "Support Wing", role: "Expansion slot", focus: "A future home for reinforcements, event support, farms, and players growing into main-alliance standards." },
+  { tag: "Open", name: "Academy Wing", role: "Growth slot", focus: "A planned onboarding space for newer governors, returning players, farms, and structured daily development." }
 ];
 
 export const notices = [
-  { title: "Weekly Driftwood Briefing", text: "Council notices, event priorities, and kingdom reminders will live here." },
-  { title: "KVK Preparation", text: "Check healing speedups, teleports, resources, troop presets, and rally march readiness." },
-  { title: "Discord Recruitment", text: "Migration applications should continue through the Discord recruitment server." }
+  { title: "Weekly Driftwood Briefing", text: "A clean weekly note for council updates, kingdom priorities, member shoutouts, and upcoming events." },
+  { title: "KVK Preparation", text: "A shared readiness checklist for healing speedups, teleports, resources, march presets, and rally response." },
+  { title: "Discord Recruitment", text: "Migration candidates still apply in Discord, while the website shows them what KD1313 is becoming." }
 ];
 
 export const mgeRows = [
   { rank: 1, governor: "Reserved", alliance: "TiNY", points: "0", status: "Open" },
   { rank: 2, governor: "Reserved", alliance: "TiNY", points: "0", status: "Open" },
-  { rank: 3, governor: "Reserved", alliance: "TBD", points: "0", status: "Open" },
-  { rank: 4, governor: "Reserved", alliance: "TBD", points: "0", status: "Open" }
+  { rank: 3, governor: "Reserved", alliance: "Open", points: "0", status: "Open" },
+  { rank: 4, governor: "Reserved", alliance: "Open", points: "0", status: "Open" }
 ];
 
 export const rosterRows = [
   { governor: "Ficter", alliance: "TiNY", role: "Founder / Admin", timezone: "SGT", status: "Active" },
-  { governor: "R4 Slot", alliance: "TiNY", role: "Officer", timezone: "TBD", status: "Placeholder" },
-  { governor: "Rally Lead", alliance: "TiNY", role: "War Lead", timezone: "TBD", status: "Placeholder" },
-  { governor: "Migration Lead", alliance: "TiNY", role: "Recruitment", timezone: "TBD", status: "Placeholder" }
+  { governor: "Officer Seat", alliance: "TiNY", role: "R4 / Organizer", timezone: "Open", status: "Recruiting" },
+  { governor: "Rally Captain", alliance: "TiNY", role: "War Lead", timezone: "Open", status: "Recruiting" },
+  { governor: "Gatekeeper", alliance: "TiNY", role: "Recruitment", timezone: "Open", status: "Recruiting" }
 ];

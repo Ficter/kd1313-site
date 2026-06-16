@@ -10,8 +10,8 @@ export default function LoginPage() {
           <div className="eyebrow">Members Login</div>
           <h2>Kingdom access is being prepared.</h2>
           <p className="muted">
-            The production login will use Supabase username/password accounts, with Discord login and role mapping planned later.
-            For now, the member pages contain placeholder content only.
+            Account access will use member usernames and passwords, with Discord login and role mapping planned later.
+            Until access control is connected, the member hall is open as a guided preview.
           </p>
           <div className="field">
             <label>Username</label>
@@ -22,7 +22,7 @@ export default function LoginPage() {
             <input placeholder="password" type="password" disabled />
           </div>
           <div className="actions">
-            <Link className="btn" href="/members">Preview Members Area</Link>
+            <Link className="btn" href="/members">Enter Member Hall</Link>
             <Link className="btn secondary" href="/">Back To Public Site</Link>
           </div>
           <p className="muted" style={{ marginTop: 18 }}>
