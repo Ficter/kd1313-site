@@ -2,79 +2,92 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { PublicNav } from "@/components/PublicNav";
 import { alliances } from "@/lib/data";
+import { playerStats, statsPeriod } from "@/lib/stats";
 
-const modules = [
-  ["Announcements", "Kingdom updates and instructions in one place.", "Portal"],
-  ["Events", "Ark, KVK, MGE, and reset reminders.", "Portal"],
-  ["KVK Stats", "A home for KP, dead troops, prep, and performance tracking.", "Planned"],
-  ["Accounts", "Roster and governor ID management for officers.", "Planned"]
+const portalModules = [
+  ["Announcements", "Kingdom notices that do not vanish in chat."],
+  ["Events", "Ark, KVK, MGE, reset windows, and signups."],
+  ["Stats", "KP, DKP, dead, healed, acclaim, and power tracking."],
+  ["Accounts", "Roster visibility and future Discord-linked IDs."]
 ];
+
+const totals = playerStats.reduce(
+  (sum, player) => ({
+    power: sum.power + player.currentPower,
+    dkp: sum.dkp + player.dkp,
+    kp: sum.kp + player.kp,
+    dead: sum.dead + player.dead
+  }),
+  { power: 0, dkp: 0, kp: 0, dead: 0 }
+);
+
+function compact(value: number) {
+  if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B`;
+  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`;
+  if (value >= 1_000) return `${(value / 1_000).toFixed(1)}K`;
+  return String(value);
+}
 
 export default function HomePage() {
   return (
     <div className="shell">
       <PublicNav />
-      <section className="hero">
-        <div className="hero-main">
+      <main className="portal-home">
+        <section className="portal-hero">
           <div>
-            <div className="eyebrow">Kingdom 1313 | Kingdom of Driftwood</div>
-            <h1>KD1313 Kingdom Portal.</h1>
+            <div className="eyebrow">Kingdom 1313 / TiNY</div>
+            <h1>KD1313 command portal.</h1>
             <p className="lead">
-              A simple public front door for Kingdom 1313, with recruitment handled through Discord
-              and member tools kept behind the portal.
+              A clean public gate for migrants and allies, with the practical kingdom tools kept behind member login.
             </p>
             <div className="actions">
               <Link className="btn" href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || "https://discord.gg/"}>
-                Join Recruitment Discord
+                Recruitment Discord
               </Link>
               <Link className="btn secondary" href="/login">Member Login</Link>
             </div>
-          </div>
-          <div className="signal-strip">
-            <div className="signal"><b>1313</b><span>Kingdom ID</span></div>
-            <div className="signal"><b>TiNY</b><span>Main alliance</span></div>
-            <div className="signal"><b>KVK</b><span>War prep focus</span></div>
-            <div className="signal"><b>Driftwood</b><span>Kingdom identity</span></div>
-          </div>
-        </div>
-        <aside className="hero-side" aria-label="Kingdom 1313 cinematic artwork">
-          <div className="command-card">
-            <span className="tag">Portal Status</span>
-            <h3>Public outside. Operational inside.</h3>
-            <p className="muted">Visitors get the essentials. Members log in for rankings, prep, tools, roster info, and future Discord-connected features.</p>
-            <div className="status-grid" style={{ marginTop: 18 }}>
-              <div className="status"><strong>Open</strong><span>Recruitment Discord</span><small>Visitors</small></div>
-              <div className="status"><strong>Login</strong><span>Member portal</span><small>KD1313</small></div>
+            <div className="signal-strip">
+              <div className="signal"><b>1313</b><span>Kingdom</span></div>
+              <div className="signal"><b>TiNY</b><span>Main alliance</span></div>
+              <div className="signal"><b>{playerStats.length}</b><span>Tracked players</span></div>
+              <div className="signal"><b>{compact(totals.kp)}</b><span>Period KP</span></div>
             </div>
           </div>
-        </aside>
-      </section>
-      <section>
+          <div className="portal-card">
+            <span className="tag">Stats Window</span>
+            <h2>{statsPeriod}</h2>
+            <div className="mini-stats">
+              <div><strong>{compact(totals.power)}</strong><span>Total power</span></div>
+              <div><strong>{compact(totals.dkp)}</strong><span>Total DKP</span></div>
+              <div><strong>{compact(totals.dead)}</strong><span>Dead troops</span></div>
+              <div><strong>{compact(totals.kp)}</strong><span>T4 + T5 KP</span></div>
+            </div>
+            <Link className="btn secondary" href="/login">Open Protected Stats</Link>
+          </div>
+        </section>
+        <section className="portal-section">
         <div className="section-head">
           <div>
-            <div className="eyebrow">Portal</div>
-            <h2>Built for practical kingdom use.</h2>
-            <p className="lead">The site stays small: public identity, Discord recruitment, member login, and tools that help leadership run the kingdom.</p>
+            <div className="eyebrow">Portal Modules</div>
+            <h2>Simple on purpose.</h2>
+            <p className="lead">The site should do useful work: show credibility outside, organize members inside, and grow toward Discord login later.</p>
           </div>
         </div>
-        <div className="module">
-          <div className="module-list">
-            {modules.map(([label, text, status]) => (
-              <div className="module-row" key={label}>
-                <b>{label}</b>
-                <span>{text}</span>
-                <em className="pill">{status}</em>
-              </div>
-            ))}
-          </div>
+        <div className="grid-4">
+          {portalModules.map(([label, text]) => (
+            <article className="panel" key={label}>
+              <span className="tag">{label}</span>
+              <p className="muted">{text}</p>
+            </article>
+          ))}
         </div>
       </section>
-      <section>
+      <section className="portal-section">
         <div className="section-head">
           <div>
-            <div className="eyebrow">Alliance</div>
-            <h2>Main alliance: TiNY.</h2>
-            <p className="lead">Tiddies N&apos; Yams is the current main alliance banner for Kingdom 1313.</p>
+            <div className="eyebrow">Kingdom Structure</div>
+            <h2>Current main banner: TiNY.</h2>
+            <p className="lead">Recruitment stays in Discord. The website stays clean, fast, and operational.</p>
           </div>
           <Link className="btn secondary" href="/alliances">Directory</Link>
         </div>
@@ -88,6 +101,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );
