@@ -23,7 +23,7 @@ export function MemberShell({ children }: { children: React.ReactNode }) {
         </Link>
         <div className="nav-links">
           <Link href="/">Public Site</Link>
-          <Link href="/login">Account</Link>
+          <Link href="/logout">Sign Out</Link>
         </div>
       </nav>
       <div className="dashboard">

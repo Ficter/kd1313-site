@@ -8,7 +8,7 @@ Next.js website and member command center for `kd1313.com`, built for the Kingdo
 - `/alliances` - Public alliance directory
 - `/rules` - Public kingdom rules
 - `/events` - Public event board
-- `/login` - Member login placeholder
+- `/login` - Member login
 
 ## Members Area
 
@@ -20,7 +20,7 @@ Next.js website and member command center for `kd1313.com`, built for the Kingdo
 - `/members/roster` - Player roster
 - `/members/council` - Officer/council placeholder
 
-The members area currently contains placeholder content only. Do not post sensitive KVK plans until Supabase auth and role protection are connected.
+The members area is protected by a shared username/password gate. This is a practical first version for the kingdom. Supabase or Discord role-based accounts can replace it later when individual member accounts are needed.
 
 ## Environment Variables
 
@@ -29,6 +29,11 @@ Copy `.env.example` into Vercel environment variables when ready:
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `NEXT_PUBLIC_DISCORD_INVITE_URL`
+- `KD1313_MEMBER_USERNAME`
+- `KD1313_MEMBER_PASSWORD`
+- `KD1313_MEMBER_SESSION_SECRET`
+
+`KD1313_MEMBER_SESSION_SECRET` can be any long random private value. If it is omitted, the password is used as the session secret.
 
 ## Deploy With GitHub And Vercel
 
