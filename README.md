@@ -1,25 +1,53 @@
-# Kingdom 1313 Website
+# KD1313 | Kingdom of Driftwood
 
-Static community website for `kd1313.com`, built for a Rise of Kingdoms Kingdom 1313 community hub.
+Next.js website and member command center for `kd1313.com`, built for the Kingdom 1313 / Kingdom of Driftwood Rise of Kingdoms community.
 
-## Pages
+## Public Pages
 
-- `index.html` - Home
-- `alliances.html` - Alliance directory
-- `rules.html` - Kingdom rules
-- `events.html` - Event board
-- `join.html` - Migration/contact page
+- `/` - Landing page and kingdom identity
+- `/alliances` - Public alliance directory
+- `/rules` - Public kingdom rules
+- `/events` - Public event board
+- `/login` - Member login placeholder
+
+## Members Area
+
+- `/members` - Command dashboard
+- `/members/newsletter` - Weekly newsletter
+- `/members/mge` - MGE rank board
+- `/members/kvk` - KVK preparation room
+- `/members/tools` - Tools and roadmap
+- `/members/roster` - Player roster
+- `/members/council` - Officer/council placeholder
+
+The members area currently contains placeholder content only. Do not post sensitive KVK plans until Supabase auth and role protection are connected.
+
+## Environment Variables
+
+Copy `.env.example` into Vercel environment variables when ready:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `NEXT_PUBLIC_DISCORD_INVITE_URL`
 
 ## Deploy With GitHub And Vercel
 
-1. Create a GitHub repository, for example `Ficter/kd1313-site`.
-2. Upload this folder to the repository root.
-3. In Vercel, import the GitHub repository.
-4. Use the default static-site settings. No build command is required.
-5. Add `kd1313.com` and `www.kd1313.com` in Vercel Domains.
-6. Update DNS at Hostinger to point to Vercel.
-7. Confirm both domain versions load with HTTPS.
+1. Push this repository to GitHub.
+2. In Vercel, import the GitHub repository.
+3. Framework should auto-detect as Next.js.
+4. Add `kd1313.com` and `www.kd1313.com` in Vercel Domains.
+5. Update DNS at Hostinger to point to Vercel.
+6. Confirm both domain versions load with HTTPS.
 
-## Notes
+## Future Discord Bot Ideas
+
+- Discord login
+- Discord role mapping for member access
+- Website announcements posted to Discord
+- Event reminders
+- War attendance tracking
+- Migration application status sync
+
+## Legal Note
 
 This is an unofficial community website. Rise of Kingdoms belongs to its respective owner.
