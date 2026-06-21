@@ -17,33 +17,42 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-main">
           <div>
-            <div className="eyebrow">Kingdom 1313 | Kingdom of Driftwood</div>
+            <div className="eyebrow">Kingdom 1313</div>
+            <h1>Order. Loyalty. Victory.</h1>
             <p className="lead">
-              A simple public front door for Kingdom 1313, with recruitment handled through Discord
-              and member tools kept behind the portal.
+              KD1313 is a competitive kingdom built on disciplined leadership, organized warfare,
+              and a kingdom-first culture. We value contribution, teamwork, and long-term success
+              above individual ambition.
             </p>
             <div className="actions">
               <Link className="btn" href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || "https://discord.gg/"}>
-                Join Recruitment Discord
+                Apply for Migration
               </Link>
-              <Link className="btn secondary" href="/login">Member Login</Link>
+              <Link className="btn secondary" href="/login">Member Portal</Link>
             </div>
           </div>
           <div className="signal-strip">
-            <div className="signal"><b>1313</b><span>Kingdom ID</span></div>
-            <div className="signal"><b>TiNY</b><span>Main alliance</span></div>
-            <div className="signal"><b>KVK</b><span>War prep focus</span></div>
-            <div className="signal"><b>Driftwood</b><span>Kingdom identity</span></div>
+            <div className="signal"><b>1313</b><span>Kingdom Number</span></div>
+            <div className="signal"><b>Season of Conquest</b><span>Current Season</span></div>
+            <div className="signal"><b>Competitive KVK</b><span>Kingdom Focus</span></div>
+            <div className="signal"><b>International Community</b><span>Player Base</span></div>
           </div>
         </div>
         <aside className="hero-side" aria-label="Kingdom 1313 cinematic artwork">
           <div className="command-card">
-            <span className="tag">Portal Status</span>
-            <h3>Public outside. Operational inside.</h3>
-            <p className="muted">Visitors get the essentials. Members log in for rankings, prep, tools, roster info, and future Discord-connected features.</p>
-            <div className="status-grid" style={{ marginTop: 18 }}>
-              <div className="status"><strong>Open</strong><span>Recruitment Discord</span><small>Visitors</small></div>
-              <div className="status"><strong>Login</strong><span>Member portal</span><small>KD1313</small></div>
+            <span className="tag">Recruitment & Access</span>
+            <h3>Recruitment & Access</h3>
+            <p className="muted">
+              Visitors can explore kingdom information, rules, and recruitment requirements.
+            </p>
+            <p className="muted">
+              Members can access internal resources, event planning, and kingdom operations through the secure portal.
+            </p>
+            <div className="actions">
+              <Link className="btn" href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || "https://discord.gg/"}>
+                Recruitment Discord
+              </Link>
+              <Link className="btn secondary" href="/login">Member Login</Link>
             </div>
           </div>
         </aside>
