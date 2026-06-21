@@ -1,44 +1,45 @@
+import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { PublicNav } from "@/components/PublicNav";
 
 const leaders = [
   {
-    name: "Ficter",
-    title: "Founder / Admin",
-    role: "Kingdom systems, website, recruitment direction",
-    intro: "Builds the structure behind the kingdom and keeps long-term projects moving.",
-    strengths: ["Systems thinker", "Persistent", "Kingdom-first"],
-    quirks: "Will turn a small idea into a full operational platform if nobody stops him."
+    name: "Dis",
+    color: "Blue",
+    title: "Events & Diplomacy",
+    image: "/assets/images/leaders/dis.jpg",
+    intro: "The calm connector of the council. Dis keeps event rhythm and diplomatic lines moving so the kingdom stays coordinated instead of reactive.",
+    strengths: ["Event timing", "Diplomacy", "Steady coordination"],
+    quirk: "Blue-coded, composed, and somehow always aware of three conversations at once."
   },
   {
-    name: "War Council",
-    title: "KVK Command",
-    role: "War planning, rally calls, pass discipline",
-    intro: "The group responsible for making sure activity becomes coordinated pressure.",
-    strengths: ["Fast calls", "Objective focus", "Battlefield discipline"],
-    quirks: "Lives in UTC timers and probably has too many spreadsheets open."
+    name: "Arya",
+    color: "Gold",
+    title: "Territory & Diplomacy",
+    image: "/assets/images/leaders/arya.jpg",
+    intro: "The territorial mind with a diplomat's patience. Arya focuses on placement, map control, and the quiet conversations that prevent loud problems.",
+    strengths: ["Territory planning", "Diplomacy", "Map awareness"],
+    quirk: "Sees a border dispute and immediately starts arranging the chessboard."
   },
   {
-    name: "TiNY Officers",
-    title: "Main Alliance Leadership",
-    role: "Member coordination, standards, daily execution",
-    intro: "The alliance layer that turns kingdom expectations into daily habits.",
-    strengths: ["Member support", "Event coverage", "Accountability"],
-    quirks: "Equal parts serious coordination and chaotic alliance chat energy."
+    name: "Gyomei",
+    color: "Green",
+    title: "Infantry Warlord & Events",
+    image: "/assets/images/leaders/gyomei.jpg",
+    intro: "A frontline presence with event discipline. Gyomei brings infantry pressure, activity, and the kind of dependable energy that keeps members showing up.",
+    strengths: ["Infantry leadership", "Event activity", "Battlefield pressure"],
+    quirk: "Looks peaceful until the march queues open."
   },
   {
-    name: "Recruitment Team",
-    title: "Migration Gatekeepers",
-    role: "Candidate review, interviews, fit checks",
-    intro: "Looks beyond power numbers and checks whether a player actually fits the culture.",
-    strengths: ["Screening", "Communication", "Culture fit"],
-    quirks: "Suspicious of anyone who says they are active but has no receipts."
+    name: "Dragon",
+    color: "Red",
+    title: "Archer Warlord & Welfare",
+    image: "/assets/images/leaders/dragon.jpg",
+    intro: "The red-banner war engine with a welfare streak. Dragon brings archer firepower while keeping an eye on whether the kingdom can sustain the fight.",
+    strengths: ["Archer warfare", "Member welfare", "War commitment"],
+    quirk: "Equal chance of discussing kill points or checking if people have enough support."
   }
 ];
-
-function initials(name: string) {
-  return name.split(" ").map((part) => part[0]).join("").slice(0, 2).toUpperCase();
-}
 
 export default function LeadershipPage() {
   return (
@@ -46,24 +47,25 @@ export default function LeadershipPage() {
       <PublicNav />
       <section className="page">
         <div className="eyebrow">Leadership</div>
-        <h1>Meet the people behind the kingdom.</h1>
+        <h1>Meet the leadership core.</h1>
         <p className="lead">
-          Strong kingdoms are built by visible leaders, reliable officers, and players who trust the plan.
-          These profiles will become the public display section for KD1313 leadership.
+          KD1313 is shaped by leaders with different colors, roles, and instincts. This is the public showcase for the people members and migrants will recognize.
         </p>
         <div className="leader-grid">
           {leaders.map((leader) => (
-            <article className="leader-card" key={leader.name}>
-              <div className="leader-avatar">{initials(leader.name)}</div>
-              <div>
-                <span className="tag">{leader.title}</span>
+            <article className={`leader-card leader-${leader.color.toLowerCase()}`} key={leader.name}>
+              <div className="leader-photo">
+                <Image src={leader.image} alt={`${leader.name} governor profile`} width={1200} height={675} />
+              </div>
+              <div className="leader-body">
+                <span className="tag">{leader.color} Command</span>
                 <h3>{leader.name}</h3>
-                <p className="muted">{leader.role}</p>
+                <p className="leader-role">{leader.title}</p>
                 <p>{leader.intro}</p>
                 <div className="leader-chips">
                   {leader.strengths.map((strength) => <span key={strength}>{strength}</span>)}
                 </div>
-                <p className="muted"><strong>Quirk:</strong> {leader.quirks}</p>
+                <p className="muted"><strong>Quirk:</strong> {leader.quirk}</p>
               </div>
             </article>
           ))}
