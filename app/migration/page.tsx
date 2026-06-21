@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { PublicNav } from "@/components/PublicNav";
 
+const migrationDiscordUrl = "https://discord.gg/nyAUTP9mJZ";
+
 const requirements = [
   ["Contribution", "Migration candidates should be ready to contribute in KVK, events, and kingdom objectives."],
   ["Teamwork", "KD1313 values players who follow kingdom direction and strengthen the group."],
@@ -21,7 +23,7 @@ export default function MigrationPage() {
           KVK history, goals, and attitude. The kingdom is built around contribution and discipline.
         </p>
         <div className="actions">
-          <Link className="btn" href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || "https://discord.gg/"}>
+          <Link className="btn" href={migrationDiscordUrl}>
             Open Recruitment Discord
           </Link>
           <Link className="btn secondary" href="/rules">Read Rules</Link>

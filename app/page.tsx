@@ -3,6 +3,8 @@ import { Footer } from "@/components/Footer";
 import { PublicNav } from "@/components/PublicNav";
 import { alliances } from "@/lib/data";
 
+const migrationDiscordUrl = "https://discord.gg/nyAUTP9mJZ";
+
 const modules = [
   ["Announcements", "Kingdom updates and instructions in one place.", "Portal"],
   ["Events", "Ark, KVK, MGE, and reset reminders.", "Portal"],
@@ -25,17 +27,11 @@ export default function HomePage() {
               above individual ambition.
             </p>
             <div className="actions">
-              <Link className="btn" href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || "https://discord.gg/"}>
+              <Link className="btn" href={migrationDiscordUrl}>
                 Apply for Migration
               </Link>
               <Link className="btn secondary" href="/login">Member Portal</Link>
             </div>
-          </div>
-          <div className="signal-strip">
-            <div className="signal"><b>1313</b><span>Kingdom Number</span></div>
-            <div className="signal"><b>Season of Conquest</b><span>Current Season</span></div>
-            <div className="signal"><b>Competitive KVK</b><span>Kingdom Focus</span></div>
-            <div className="signal"><b>International Community</b><span>Player Base</span></div>
           </div>
         </div>
         <aside className="hero-side" aria-label="Kingdom 1313 cinematic artwork">
@@ -49,7 +45,7 @@ export default function HomePage() {
               Members can access internal resources, event planning, and kingdom operations through the secure portal.
             </p>
             <div className="actions">
-              <Link className="btn" href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || "https://discord.gg/"}>
+              <Link className="btn" href={migrationDiscordUrl}>
                 Recruitment Discord
               </Link>
               <Link className="btn secondary" href="/login">Member Login</Link>
