@@ -1,13 +1,30 @@
 import { MemberShell } from "@/components/MemberShell";
+import { memberPosts } from "@/lib/data";
 
 export default function NewsletterPage() {
   return (
     <MemberShell>
-      <div className="dash-title"><h1>Weekly Newsletter</h1><span className="tag">Draft</span></div>
-      <div className="grid-3">
-        <article className="notice"><h3>This Week In KD1313</h3><p className="muted">Council summary, alliance shoutouts, event reminders, and kingdom mood can live here.</p></article>
-        <article className="notice"><h3>Member Spotlight</h3><p className="muted">Showcase top fighters, helpful farmers, rally captains, scouts, and support players.</p></article>
-        <article className="notice"><h3>Next Push</h3><p className="muted">Set the week&apos;s focus: KVK prep, MGE discipline, recruitment, or alliance growth.</p></article>
+      <div className="dash-title">
+        <div>
+          <div className="eyebrow">Member Posts</div>
+          <h1>Command posts and kingdom notes.</h1>
+        </div>
+        <span className="tag">Curated</span>
+      </div>
+      <div className="post-stack">
+        {memberPosts.map((post) => (
+          <article className="notice long-post" key={post.title}>
+            <div className="post-meta">
+              <span className="tag">{post.category}</span>
+              <small>{post.date} · {post.priority}</small>
+            </div>
+            <h2>{post.title}</h2>
+            <p className="muted">{post.summary}</p>
+            <ul>
+              {post.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+            </ul>
+          </article>
+        ))}
       </div>
     </MemberShell>
   );
