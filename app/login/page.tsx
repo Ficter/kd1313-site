@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { PublicNav } from "@/components/PublicNav";
-import { memberAuthIsConfigured } from "@/lib/auth";
+import { memberAuthIsConfigured, supabaseAuthIsConfigured } from "@/lib/auth";
 import { loginMember } from "./actions";
 
 const errorMessages: Record<string, string> = {
-  invalid: "That username or password is not correct.",
+  invalid: "Those login details are not correct.",
   setup: "Member login is ready, but the private credentials have not been added in Vercel yet."
 };
 
@@ -14,6 +14,7 @@ export default function LoginPage({
   searchParams?: { error?: string; next?: string };
 }) {
   const isConfigured = memberAuthIsConfigured();
+  const usesSupabase = supabaseAuthIsConfigured();
   const error = searchParams?.error ? errorMessages[searchParams.error] : "";
   const nextPath = searchParams?.next || "/members";
 
@@ -25,15 +26,15 @@ export default function LoginPage({
           <div className="eyebrow">Members Login</div>
           <h2>Enter the member hall.</h2>
           <p className="muted">
-            Use the kingdom member credentials to open notices, tools, MGE boards, KVK prep,
-            roster pages, and council placeholders. Discord login can still be added later.
+            Use your kingdom member account to open notices, tools, MGE boards, KVK prep,
+            roster pages, and council placeholders.
           </p>
           {error ? <p className="login-alert">{error}</p> : null}
           <form action={loginMember}>
             <input name="next" type="hidden" value={nextPath} />
             <div className="field">
-              <label htmlFor="username">Username</label>
-              <input id="username" name="username" placeholder="member username" autoComplete="username" disabled={!isConfigured} />
+              <label htmlFor="username">{usesSupabase ? "Email" : "Username"}</label>
+              <input id="username" name="username" placeholder={usesSupabase ? "member email" : "member username"} autoComplete="username" disabled={!isConfigured} />
             </div>
             <div className="field">
               <label htmlFor="password">Password</label>
@@ -46,7 +47,7 @@ export default function LoginPage({
           </form>
           {!isConfigured ? (
             <p className="muted" style={{ marginTop: 18 }}>
-              Add KD1313_MEMBER_USERNAME and KD1313_MEMBER_PASSWORD in Vercel to activate this gate.
+              Add Supabase keys in Vercel to activate member accounts, or keep the temporary shared login variables as a fallback.
             </p>
           ) : null}
         </div>

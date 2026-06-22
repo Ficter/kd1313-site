@@ -20,7 +20,7 @@ Next.js website and member command center for `kd1313.com`, built for the Kingdo
 - `/members/roster` - Player roster
 - `/members/council` - Officer/council placeholder
 
-The members area is protected by a shared username/password gate. This is a practical first version for the kingdom. Supabase or Discord role-based accounts can replace it later when individual member accounts are needed.
+The members area supports Supabase Auth for individual member accounts. If Supabase keys are not configured yet, the site falls back to the temporary shared username/password gate so the live site does not break during setup.
 
 ## Environment Variables
 
@@ -35,6 +35,18 @@ Copy `.env.example` into Vercel environment variables when ready:
 
 `KD1313_MEMBER_SESSION_SECRET` can be any long random private value. If it is omitted, the password is used as the session secret.
 
+## Supabase Member Login Setup
+
+1. Create a Supabase project.
+2. Copy the project URL into `NEXT_PUBLIC_SUPABASE_URL`.
+3. Copy the anon public key into `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+4. In Supabase Auth, create member users with email and password.
+5. Add `https://www.kd1313.com` as the site URL in Supabase Auth settings.
+6. Add the Supabase variables in Vercel production environment variables.
+7. Redeploy the site.
+
+Once Supabase is active, members sign in with their own email and password. The old `KD1313_MEMBER_USERNAME`, `KD1313_MEMBER_PASSWORD`, and `KD1313_MEMBER_SESSION_SECRET` variables can stay as fallback during the transition.
+
 ## Deploy With GitHub And Vercel
 
 1. Push this repository to GitHub.
@@ -46,7 +58,7 @@ Copy `.env.example` into Vercel environment variables when ready:
 
 ## Future Discord Bot Ideas
 
-- Discord login
+- Discord login and role linking
 - Discord role mapping for member access
 - Website announcements posted to Discord
 - Event reminders
