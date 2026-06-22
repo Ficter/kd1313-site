@@ -11,6 +11,13 @@ import {
 } from "@/lib/auth";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
+const internalMemberDomain = "kd1313.local";
+
+function toMemberEmail(value: string) {
+  const login = value.trim().toLowerCase();
+  return login.includes("@") ? login : `${login}@${internalMemberDomain}`;
+}
+
 export async function loginMember(formData: FormData) {
   const username = String(formData.get("username") || "").trim();
   const password = String(formData.get("password") || "");
@@ -23,7 +30,7 @@ export async function loginMember(formData: FormData) {
   if (supabaseAuthIsConfigured()) {
     const supabase = createSupabaseServerClient();
     const { error } = await supabase!.auth.signInWithPassword({
-      email: username,
+      email: toMemberEmail(username),
       password
     });
 

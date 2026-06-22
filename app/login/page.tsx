@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PublicNav } from "@/components/PublicNav";
-import { memberAuthIsConfigured, supabaseAuthIsConfigured } from "@/lib/auth";
+import { memberAuthIsConfigured } from "@/lib/auth";
 import { loginMember } from "./actions";
 
 const errorMessages: Record<string, string> = {
@@ -14,7 +14,6 @@ export default function LoginPage({
   searchParams?: { error?: string; next?: string };
 }) {
   const isConfigured = memberAuthIsConfigured();
-  const usesSupabase = supabaseAuthIsConfigured();
   const error = searchParams?.error ? errorMessages[searchParams.error] : "";
   const nextPath = searchParams?.next || "/members";
 
@@ -33,8 +32,8 @@ export default function LoginPage({
           <form action={loginMember}>
             <input name="next" type="hidden" value={nextPath} />
             <div className="field">
-              <label htmlFor="username">{usesSupabase ? "Email" : "Username"}</label>
-              <input id="username" name="username" placeholder={usesSupabase ? "member email" : "member username"} autoComplete="username" disabled={!isConfigured} />
+              <label htmlFor="username">Username</label>
+              <input id="username" name="username" placeholder="member username" autoComplete="username" disabled={!isConfigured} />
             </div>
             <div className="field">
               <label htmlFor="password">Password</label>

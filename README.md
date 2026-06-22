@@ -40,12 +40,14 @@ Copy `.env.example` into Vercel environment variables when ready:
 1. Create a Supabase project.
 2. Copy the project URL into `NEXT_PUBLIC_SUPABASE_URL`.
 3. Copy the anon public key into `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
-4. In Supabase Auth, create member users with email and password.
+4. In Supabase Auth, create member users with internal emails such as `arya@kd1313.local`.
 5. Add `https://www.kd1313.com` as the site URL in Supabase Auth settings.
 6. Add the Supabase variables in Vercel production environment variables.
 7. Redeploy the site.
 
-Once Supabase is active, members sign in with their own email and password. The old `KD1313_MEMBER_USERNAME`, `KD1313_MEMBER_PASSWORD`, and `KD1313_MEMBER_SESSION_SECRET` variables can stay as fallback during the transition.
+Once Supabase is active, members sign in with their username and password. The website turns usernames into internal emails behind the scenes, so `Arya` becomes `arya@kd1313.local`. Full email login still works if needed.
+
+The old `KD1313_MEMBER_USERNAME`, `KD1313_MEMBER_PASSWORD`, and `KD1313_MEMBER_SESSION_SECRET` variables can stay as fallback during the transition.
 
 ## Deploy With GitHub And Vercel
 
